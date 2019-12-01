@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div class="">
+{% for v in file%}
+<video width = "500" height = "300" controls>
+         <source src = "{{v.file.url}}" type = "video/mp4">
+
+      </video>
+    {% endfor%}
+</div>
+</body>
+</html>

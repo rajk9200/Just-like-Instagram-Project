@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{mail_send}}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="heading" placeholder="Enter heading">
+    <input type="email" name="email" placeholder="Enter Your">
+
+    <textarea name="message"></textarea>
+</form>
+
+</body>
+</html>

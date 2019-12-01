@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container bg-light">
+    <h1>Login Form</h1>
+
+    {% if messages %}
+    <ul class="messages alert alert-danger">
+        {% for message in messages %}
+        <li
+        {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{login_form}}
+        <!--<p>Email:<input type="email" name="email" placeholder="Enter Email" class="form-control"></p>-->
+
+        <!--<p>Password:<input type="password" name="password" placeholder="Enter Password" class="form-control"></p>-->
+        <br>
+        <button type="submit" class="btn btn-info">Login</button>
+
+    </form>
+
+    <a href="{% url 'signup'%}">Create an Account</a>
+<!--{% autoescape on %}-->
+      <!--{{mytag}}-->
+<!--{% endautoescape %}-->
+
+</div>
+
+
+
+
+</body>
+</html>

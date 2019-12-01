@@ -1,0 +1,19 @@
+
+
+my posts....
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% for p in post %}
+<div class="">
+    <img src="{{p.image.url}}" width="200px">
+    <h1>{{p.title}}</h1>
+    <p> {{p.desc}}</p>
+    <p> {{p.date}}</p>
+
+
+    <a href="">Comment</a> -<a href="">like</a>
+</div>
+--
+
+{% endfor%}

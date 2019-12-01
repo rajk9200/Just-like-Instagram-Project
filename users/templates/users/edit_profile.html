@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="col-md-4" style="background: #00968812;
+    padding: 20px;
+    border-radius: 13px;
+    border: none;
+    overflow: hidden;"
+    >
+        <h1 class="text-danger">Create An Account Here</h1>
+        <form id="idForm" method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            <table class="table">
+                {{form}}
+            </table>
+            <button type="submit" class="btn btn-success">Update</button>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

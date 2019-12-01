@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Hi,{{login_user}}</h1>
+      <p><a href="{% url 'logout'%}">Logout</a> </p>
+
+</div>
+
+  <table class="table">
+
+
+    {% for pro in profile %}
+
+    <tr>
+      <th>Image</th>
+      <td><img src="{{pro.profile_image.url}}" width="120px"></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>{{pro.fname}} {{pro.lname}}</td>
+    </tr>
+
+    <tr>
+      <th>Date of Birth</th>
+      <td>{{pro.dob}} </td>
+    </tr>
+
+    <tr>
+      <th>Status</th>
+      <td>{{pro.status}} </td>
+    </tr>
+
+
+    <a href="{% url 'update_profile' pro.id %}" class="btn btn-info">Update Edit</a>
+    {% endfor%}
+
+
+
+  </table>
+</body>
+</html>
